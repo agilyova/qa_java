@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class AnimalTest {
-    Animal animal;
+    private Animal animal;
 
     @Before
     public void setUp() {

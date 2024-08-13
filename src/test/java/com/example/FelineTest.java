@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 public class FelineTest {
 
     @Spy
-    Feline feline;
+    private Feline feline;
 
     @Test
     public void getFamilyReturnStringFeline() {
@@ -34,12 +34,16 @@ public class FelineTest {
 
     @Test
     public void getKittensWithPositiveArgumentReturnArgument() {
-        assertEquals(1, feline.getKittens(1));
+        int expectedAmountOfKittens = 1;
+
+        assertEquals(expectedAmountOfKittens, feline.getKittens(1));
     }
 
     @Test
     public void getKittensWithZeroArgumentReturnArgument() {
-        assertEquals(0, feline.getKittens(0));
+        int expectedAmountOfKittens = 1;
+
+        assertEquals(expectedAmountOfKittens, feline.getKittens(0));
     }
 
     @Ignore("Не реализовано")
@@ -50,9 +54,10 @@ public class FelineTest {
 
     @Test
     public void getKittensWithoutArgumentReturnOne() {
+        int expectedAmountOfDefaultKittens = 1;
         Mockito.when(feline.getKittens(1)).thenReturn(1);
 
-        assertEquals(1, feline.getKittens());
+        assertEquals(expectedAmountOfDefaultKittens, feline.getKittens());
         Mockito.verify(feline).getKittens(1);
     }
 }

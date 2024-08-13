@@ -12,17 +12,18 @@ import static org.junit.Assert.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
-    Lion lion;
+    private Lion lion;
 
     @Mock
-    Feline feline;
+    private Feline feline;
 
     @Test
-    public void testGetKittens() throws Exception {
+    public void getKittensWithoutArgumentReturnOne() throws Exception {
         lion = new Lion(feline, "Самка");
         Mockito.when(feline.getKittens()).thenReturn(1);
+        int defaultKittensValue = 1;
 
-        assertEquals(1, lion.getKittens());
+        assertEquals(defaultKittensValue, lion.getKittens());
     }
 
     @Test
