@@ -41,7 +41,7 @@ public class FelineTest {
 
     @Test
     public void getKittensWithZeroArgumentReturnArgument() {
-        int expectedAmountOfKittens = 1;
+        int expectedAmountOfKittens = 0;
 
         assertEquals(expectedAmountOfKittens, feline.getKittens(0));
     }
